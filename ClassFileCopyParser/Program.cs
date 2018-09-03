@@ -35,7 +35,7 @@ namespace ClassFileCopyParser
             List<string> text = System.IO.File.ReadAllLines(path).ToList();
             var tempLines = new List<string>();
             try {
-               foreach(string textLine in text)
+               foreach(string textLine in text)       
                 {
                     tempLines.Add(textLine.Replace(replaceString, withwhatyouwhattoreplace));
                 }
@@ -61,7 +61,7 @@ namespace ClassFileCopyParser
   
             
            
-            foreach (string s in Directory.GetFiles(@"C:\\Projects\\exxat-team\\apps\\"+serviceName+"-Service\\", "*" + replaceString + "*.cs", SearchOption.AllDirectories).Select(Path.GetFullPath))
+            foreach (string s in Directory.GetFiles(@"C:\\Projects\\"+*Put Folder Name*+"\\apps\\" + serviceName+"-Service\\", "*" + replaceString + "*.cs", SearchOption.AllDirectories).Select(Path.GetFullPath))
             {
                 var booltoproceed = checkpathallowed(s);
                 if (booltoproceed)
@@ -88,7 +88,7 @@ namespace ClassFileCopyParser
 
             string replaceTextInIOC = "ElectronicSignature";
 
-            foreach (string s in Directory.GetFiles(@"C:\\Projects\\exxat-team\\apps\\"+serviceName+ "-Service\\", "*" + "IocContainer" + "*.cs", SearchOption.AllDirectories).Where(x=>x.Contains(".Business")).Select(Path.GetFullPath))
+            foreach (string s in Directory.GetFiles(@"C:\\Projects\\"+ *Put Folder Name * +"\\apps\\"+serviceName+ "-Service\\", "*" + "IocContainer" + "*.cs", SearchOption.AllDirectories).Where(x=>x.Contains(".Business")).Select(Path.GetFullPath))
             //  .Where(x=>!x.Contains("Models")).Select(Path.GetFullPath))
 
             {
@@ -123,7 +123,7 @@ namespace ClassFileCopyParser
             Console.WriteLine("Please enter proper name from service you want to delete.");
             var deleteService = Console.ReadLine();
            
-            foreach (string s in Directory.GetFiles(@"C:\Projects\exxat-team\apps\\"+ServiceName+"-Service\\", "*" + deleteService + "*.cs", SearchOption.AllDirectories).Select(Path.GetFullPath))
+            foreach (string s in Directory.GetFiles(@"C:\Projects\"+*Put Folder Name*+"\apps\\"+ServiceName+"-Service\\", "*" + deleteService + "*.cs", SearchOption.AllDirectories).Select(Path.GetFullPath))
             {
                 var booltoproceed = checkpathallowed(s);
                 if (booltoproceed)
