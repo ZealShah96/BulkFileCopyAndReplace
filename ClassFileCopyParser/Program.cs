@@ -53,21 +53,11 @@ namespace ClassFileCopyParser
         {
             List<string> listOfpaths = new List<string>();
             Console.WriteLine("Please enter proper name of service you want to cloned.");
-            //replaceString = "ElectronicSignature";
+
 
 
             iterateInToFiles("1", replaceString);
-            //foreach (string pathoffile in Directory.GetFiles(fullPathString,"*"+ SearchPattern, SearchOption.AllDirectories).Select(Path.GetFullPath))
-            //{
-            //    var booltoproceed = checkpathallowed(pathoffile);
-            //    if (booltoproceed)
-            //    {
-            //        logging("we are accessing this folder", pathoffile);
-            //        WriteLinesInfile(replaceString, withwhatyouwhattoreplace, pathoffile);
-
-            //    }
-            //}
-            //        makeSignatureInIocConfiguration(folderLocationString, withwhatyouwhattoreplace,serviceName);
+        
             return true;
         }
         
@@ -93,7 +83,7 @@ namespace ClassFileCopyParser
 
 
                     , tempLines);
-               // logging("File Created ",path.Replace(replaceString, withwhatyouwhattoreplace));
+              
                 helper.logging("we cloned a above file and clone file's path is", path.Replace(whatYouWnattoReplace, replaceString));
             }
             catch{
@@ -109,18 +99,7 @@ namespace ClassFileCopyParser
         {
             List<string> listOfpaths = new List<string>();
             Console.WriteLine("Please enter proper name from service you want to delete.");
-            //var deleteService = ;
-
-            //foreach (string s in Directory.GetFiles(@"C:\Projects\exxat-team\apps\\"+ServiceName+"-Service\\", "*" + deleteService + "*.cs", SearchOption.AllDirectories).Select(Path.GetFullPath))
-            //{
-            //    var booltoproceed = helper.checkpathallowed(s);
-            //    if (booltoproceed)
-            //    {
-            //        File.Delete(s);
-            //        Console.WriteLine(s + "\n deleted" + "\n");
-            //    }
-
-            //}
+         
             replaceString = Console.ReadLine();
             iterateInToFiles("3","");
             return listOfpaths;
@@ -169,46 +148,7 @@ namespace ClassFileCopyParser
         }
 
         #endregion
-
-        //private  void makeSignatureInIocConfiguration(string withwhatyouwhattoreplace, string serviceName)
-        //{
-        //    var scopeString=makeServiceString(withwhatyouwhattoreplace, serviceName);
-        //}
-
-
-
-        //private  string makeServiceString(string withwhatyouwhattoreplace,string serviceName)
-        //{
-
-        //    foreach (string s in Directory.GetFiles(@"C:\\Projects\\exxat-team\\apps\\"+serviceName+ "-Service\\", "*" + "IocContainer" + "*.cs", SearchOption.AllDirectories).Where(x=>x.Contains(".Business")).Select(Path.GetFullPath))
-        //    //  .Where(x=>!x.Contains("Models")).Select(Path.GetFullPath))
-
-        //    {
-        //        var booltoproceed = checkpathallowed(s);
-        //        if (booltoproceed)
-        //        {
-        //            List<string> text = System.IO.File.ReadAllLines(s).ToList();
-        //            var endlinenumber = 0;
-        //            for(var i=0;i<text.Count;i++)
-        //            {
-        //                // Console.WriteLine(textline);
-
-        //                if (text[i].IndexOf(";") > 0)
-        //                {
-        //                    endlinenumber = i+1;
-        //                }
-        //            }
-
-        //            text[endlinenumber] = text[endlinenumber] +"#region Zeal\n"+ scopeWillAdd.Replace(replaceTextInIOC, withwhatyouwhattoreplace) + scopeWillSingletonAdd.Replace(replaceTextInIOC, withwhatyouwhattoreplace)+"\n#endregion";
-        //            System.IO.File.WriteAllLines(s, text);
-        //            Console.WriteLine(endlinenumber);
-
-        //        }
-
-        //    }
-        //    return scopeWillAdd;
-        //}
-
+        
        public void filesToUpdate()
         {
 

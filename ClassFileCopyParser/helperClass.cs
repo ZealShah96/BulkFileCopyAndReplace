@@ -42,11 +42,8 @@ namespace ClassFileCopyParser
         {
         
             var listofjsonconfig=ReadJson();
-            //string scopeWillAdd = "services.AddScoped<IElectronicSignatureService, ElectronicSignatureService>();";
-            //string scopeWillSingletonAdd = "   services.AddSingleton<IElectronicSignatureRepository>(x =>{var listOfElectronicSignature = Builder<ElectronicSignature>.CreateListOfSize(5).Build().ToList(); return new " + "ElectronicSignatureInMemoryRepository(listOfElectronicSignature);"
-            //+ "}); ";
-           string replaceTextInIOC = "ElectronicSignature";
-           // List<string> text = System.IO.File.ReadAllLines(listofjsonconfig.tempLateForUpdate).ToList();
+        
+           string replaceTextInIOC = "ElectronicSignature";     
 
             return replaceTextInIOC;
 
