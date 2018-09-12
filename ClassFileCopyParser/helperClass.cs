@@ -21,8 +21,8 @@ namespace ClassFileCopyParser
         {
             List<string> excludePathIdetifier = new List<string>();
             excludePathIdetifier.Add(".BL.Test");
-            // excludePathIdetifier.Add(".Data.Test");
-            // excludePathIdetifier.Add(".Data");
+             excludePathIdetifier.Add(".Data.Test");
+             excludePathIdetifier.Add(".Data");
             excludePathIdetifier.Add(".Entity");
             foreach (var i in excludePathIdetifier)
             {
@@ -46,22 +46,22 @@ namespace ClassFileCopyParser
             //string scopeWillSingletonAdd = "   services.AddSingleton<IElectronicSignatureRepository>(x =>{var listOfElectronicSignature = Builder<ElectronicSignature>.CreateListOfSize(5).Build().ToList(); return new " + "ElectronicSignatureInMemoryRepository(listOfElectronicSignature);"
             //+ "}); ";
            string replaceTextInIOC = "ElectronicSignature";
-            List<string> text = System.IO.File.ReadAllLines(listofjsonconfig.tempLateForUpdate).ToList();
+           // List<string> text = System.IO.File.ReadAllLines(listofjsonconfig.tempLateForUpdate).ToList();
 
             return replaceTextInIOC;
 
         }
         
-        public ConfigOfApp ReadJson()
+        public List<ConfigOfApp> ReadJson()
         {
             var currentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())); ;
             DirectoryInfo di = new DirectoryInfo(currentDirectory);
             Console.WriteLine("try to find config file in below folder" + di.Parent.FullName);
-            ConfigOfApp data = new ConfigOfApp();
+            List<ConfigOfApp> data = new List<ConfigOfApp>();
             using (StreamReader r = new StreamReader(di.Parent.FullName + "/config.json"))
             {
                 string json = r.ReadToEnd();
-                data = JsonConvert.DeserializeObject<ConfigOfApp>(json);
+                data = JsonConvert.DeserializeObject<List<ConfigOfApp>>(json);
             }
             return data;
 

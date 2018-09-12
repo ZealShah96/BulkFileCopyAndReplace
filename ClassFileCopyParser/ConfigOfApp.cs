@@ -13,8 +13,7 @@ namespace ClassFileCopyParser
 
         public  string fileName { get; set; }
 
-
-        public string tempLateForUpdate { get; set; }
+        public List<string> patternInTemplateShoulReplace { get; set; }
 
     }
 }
